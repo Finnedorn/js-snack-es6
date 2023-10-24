@@ -36,6 +36,8 @@ const table = VipTable.map((element, index) => {
 console.log(table);
 */
 
+//facciamo sedere sti poveri Maneskin:
+
 const table = VipTable.map((element, index) => {
     let i;
     if(element === 'Maneskin') {
@@ -128,12 +130,19 @@ const gradesStudents = students.filter((el) => {
 });
 console.log(gradesStudents);
 
+/*
 const idsStudents = students.filter((el) => {
     return el.grades > 70 && el.id > 120;
 });
 console.log(idsStudents);
+*/
 
+//oppure:
 
+const idsStudents = gradesStudents.filter((el) => {
+    return el.id > 120;
+});
+console.log(idsStudents);
 
 
 
