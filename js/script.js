@@ -227,7 +227,7 @@ const people = [
 
 let family = people.map((el) => {
     return `
-    il suo nome è ${el.nome} ${el.cognome} e ha ${el.eta}, pertanto ${(el.eta > 18) ? 'può guidare' : 'non può guidare'}
+    il suo nome è ${el.nome} ${el.cognome} e ha ${el.eta} anni, pertanto ${(el.eta > 18) ? 'può guidare' : 'non può guidare'}
     `;
 });
 
