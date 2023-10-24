@@ -56,7 +56,6 @@ const table = VipTable.map((element, index) => {
             tablename : 'TavoloVip'
         };
     }
-    
     return i;
 });
 console.log(table);
@@ -145,4 +144,91 @@ const idsStudents = gradesStudents.filter((el) => {
 console.log(idsStudents);
 
 
+/*
+Snack 03
+a partire da un array di stringhe crea un secondo array formattando le stringhe del primo array in minuscolo e con l'iniziale maiuscola
+*/
 
+const characters= ['pippo','pluto', 'paperino'];
+
+const Characters = characters.map((el) => {
+    return el.toUpperCase().charAt(0) + el.slice(1);
+});
+
+console.log(Characters);
+
+/*
+Snack 04
+Crea un array di oggetti che rappresentano animali, ogni animale ha un nome, una famiglia ed una classe.
+*/
+
+const animals = [
+    {
+        nome: 'leone',
+        famiglia: 'felinidi',
+        classe: 'mammiferi'
+    },
+    {
+        nome: 'anna',
+        famiglia: 'canidi',
+        classe: 'ovipara'
+    },
+    {
+        nome: 'gallina',
+        famiglia: 'fasianidi',
+        classe: 'uccelli'
+    },
+    {
+        nome: 'gatto',
+        famiglia: 'felinidi',
+        classe: 'mammiferi'
+    }
+];
+
+const mammals = animals.filter((el) => {
+    return el.classe === 'mammiferi';
+});
+console.log(mammals);
+
+/*
+Snack 05 
+crea un array di oggetti che rappresentano delle persone.
+ogni persona ha un nome, un cognome e un'età.
+Crea quindi un nuovo array inserendo, per ogni persona una frase con il nome e cognome e l'indicazione se può guidare, in base all'età.
+*/
+
+const people = [
+    {
+        nome:'Mariangiangiangela',
+        cognome: 'Loca',
+        eta: 12,
+    },
+    {
+        nome:'Gemma',
+        cognome: 'del Sud',
+        eta: 23,
+    },
+    {
+        nome:'Shiva',
+        cognome: 'Zanicchi',
+        eta: 55,
+    },
+    {
+        nome:'Gigi',
+        cognome: 'Proiettili',
+        eta: 45,
+    },
+    {
+        nome:'Heather',
+        cognome: 'Paresi',
+        eta: 32,
+    }
+];
+
+let family = people.map((el) => {
+    return `
+    il suo nome è ${el.nome} ${el.cognome} e ha ${el.eta}, pertanto ${(el.eta > 18) ? 'può guidare' : 'non può guidare'}
+    `;
+});
+
+console.log(family);
