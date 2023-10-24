@@ -24,15 +24,40 @@ const VipTable = [
     'Maneskin'
 ];
 
+/*
 const table = VipTable.map((element, index) => {
     let i = {
         guestname: element,
-        tablename: index + 1
+        place : index + 1,
+        tablename : 'TavoloVip'
     };
     return i;
 });
 console.log(table);
+*/
 
+const table = VipTable.map((element, index) => {
+    let i;
+    if(element === 'Maneskin') {
+        i = {
+            guestname: element,
+            place01 : index +1,
+            place02 : index +2,
+            place03 : index +3,
+            place04 : index +4,
+            tablename : 'TavoloVip'
+        };
+    } else {
+        i = {
+            guestname: element,
+            place : index + 1,
+            tablename : 'TavoloVip'
+        };
+    }
+    
+    return i;
+});
+console.log(table);
 
 
 /*
@@ -92,7 +117,7 @@ const students = [
     },
 ];
 
-const namesStudents = students.filter((el) => {
+const namesStudents = students.map((el) => {
     return el.name.toUpperCase(); 
 });
 console.log(namesStudents);
