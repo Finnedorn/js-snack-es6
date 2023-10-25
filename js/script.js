@@ -271,7 +271,6 @@ const bikes = [
 ];
 console.log(bikes);
 
-
 const [,,,,{
     nome,
     peso 
@@ -282,5 +281,74 @@ console.log(`la bici più leggera è: ${nome}  peso: ${peso}kg`);
 let result = document.getElementById('app');
 result.innerHTML = `la bici più leggera è: ${nome}  peso: ${peso}kg`;
 
+/*
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+
+const ftbTeam = [
+    {
+        player:'Marco dello Snack di prima',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'Sandrone',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'AnnaCane',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'Un Frigorifero',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'I Celestini',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'I flauti Mulino bianco',
+        score: 0,
+        fouls: 0
+    },
+    {
+        player:'la Signora di sotto',
+        score: 0,
+        fouls: 0
+    }
+];
+
+
+const ftbTeamPoints = ftbTeam.map((el) => {
+    el.score = getRndInteger(1,50);
+    el.fouls = getRndInteger(1,50);
+    return el;
+});
+console.log(ftbTeamPoints);
+
+/*
+for(let [{name: a,fouls: b}] of ftbTeamPoints) {
+    console.log(`nome: ${a}, falli subiti: ${b}`);
+};
+*/
+footbal = document.getElementById('footbal');
+
+for(let val of ftbTeamPoints) {
+    console.log(val.player, val.fouls);
+    footbal.innerHTML += `${val.player}, ${val.fouls} <br>`;
+};
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 
