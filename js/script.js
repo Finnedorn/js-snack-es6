@@ -234,3 +234,53 @@ let family = people.map((el) => {
 console.log(family);
 
 
+//25/10/2023
+//snack 3
+/*
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+
+
+const bikes = [
+    {
+        nome:'bici ganza',
+        peso: 7
+    },
+    {
+        nome:'graziella',
+        peso: 6
+    },
+    {
+        nome:'100% brumotti',
+        peso: 5
+    },
+    {
+        nome:'bici elettrica',
+        peso: 10
+    },
+    {
+        nome:'biciclettina',
+        peso: 4
+    },
+    {
+        nome:'monociclo',
+        peso: 5
+    }
+];
+console.log(bikes);
+
+
+const [,,,,{
+    nome,
+    peso 
+}] = bikes;
+
+console.log(`la bici più leggera è: ${nome}  peso: ${peso}kg`);
+
+let result = document.getElementById('app');
+result.innerHTML = `la bici più leggera è: ${nome}  peso: ${peso}kg`;
+
+
+
