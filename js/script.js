@@ -232,3 +232,5 @@ let family = people.map((el) => {
 });
 
 console.log(family);
+
+
