@@ -281,6 +281,32 @@ console.log(`la bici più leggera è: ${nome}  peso: ${peso}kg`);
 let result = document.getElementById('app');
 result.innerHTML = `la bici più leggera è: ${nome}  peso: ${peso}kg`;
 
+bikes.sort((a,b) => {
+
+    return a.peso - b.peso;
+});
+console.log(bikes);
+//oppure:
+
+const bicileggera = bici.sort((a,b)=> a.peso - b.peso);
+bicileggera = [0];
+console.log(bicileggera);
+//voglio ridurre tutte le bici ad una sola:
+
+const bicileggera = bikes.reduce((accumulator, element) =>{
+    //un ternario: l'accumulatore: se il peso dell'element è minore a peso dell'accumulatore, è l'elemento, altrimenti è l'accumulatore 
+    accumulator = element.peso < accumulator.peso ? element : accumulator;
+    return accumulator
+},bici[0]);
+
+const {peso,nome} = bicileggera;
+document.getElementById('app').innerHTML =
+`
+la bici più leggera è: ${nome}  peso: ${peso}kg
+`;
+
+
+
 /*
 SNACK 4
 Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
