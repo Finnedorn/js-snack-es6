@@ -305,6 +305,9 @@ document.getElementById('app').innerHTML =
 la bici più leggera è: ${nome}  peso: ${peso}kg
 `;
 
+//oppure:
+const {nome,peso} = bikes.sort((a,b) => a.peso -b.peso)[0];
+
 
 
 /*
